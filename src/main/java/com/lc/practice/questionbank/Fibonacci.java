@@ -19,6 +19,7 @@ Explanation: F(4) = F(3) + F(2) = F(2) + F(1) + F(2) = F(1) + F(0) + F(1) + F(2)
 Base cases
 F(1) = 1
 F(0) = 0
+F(n) = F(n - 1) + F(n - 2)
  */
 
 public class Fibonacci {
