@@ -15,6 +15,10 @@ Example 2
 Input: nums = 4
 Output: 3
 Explanation: F(4) = F(3) + F(2) = F(2) + F(1) + F(2) = F(1) + F(0) + F(1) + F(2) = F(1) + F(0) + F(1) + F(1) + F(0)
+
+Base cases
+F(1) = 1
+F(0) = 0
  */
 
 public class Fibonacci {
