@@ -1,6 +1,10 @@
 package com.lc.practice.questionbank;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
+import java.util.HashMap;
 https://leetcode.com/problems/fibonacci-number/description/
 You are given a integer >= 0
 
@@ -24,10 +28,27 @@ F(n) = F(n - 1) + F(n - 2)
 
 public class Fibonacci {
     static int suboptimalSolution(int input) {
-        return 0;
+        if (input == 1) {
+            return 1;
+        } 
+        if (input == 0) {
+            return 0;
+        }
+        return suboptimalSolution(input - 1) + suboptimalSolution(input - 2);
     }
 
+    static Map<Integer, Integer> cache = new HashMap<>();
+
     static int optimalSolution(int input) {
-        return  0;
+        if (cache.containsKey(input)) {
+            return cache.get(input);
+        }
+        if (input == 1 || input == 0) {
+            return input;
+        }
+        int result = optimalSolution(input - 1) + optimalSolution(input - 2);
+        cache.put(input, result);
+        
+        return result;
     }
 }
